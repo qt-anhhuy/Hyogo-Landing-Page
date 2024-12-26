@@ -13,55 +13,42 @@ const Company = ({ logo, name, linhvuc, text1, text2 }: CompanyProps) => {
       ? "bg-blue-secondary"
       : "bg-yellow";
   return (
-    <div className="flex flex-col ">
-      <div className="w-full h-auto">
+    <div className="flex flex-col w-full lg:w-auto">
+      <div className="w-full lg:max-w-[671px] h-auto">
         <iframe
           className="w-full min-h-[340px]"
           src="https://www.youtube.com/embed/7xbKejvXIGE?list=RD7xbKejvXIGE"
           allowFullScreen
         ></iframe>
       </div>
-      <div className={`w-full h-3 ${color}`} />
-      <div className="flex flex-row gap-3 sm:gap-10 my-5">
-        <div className="basis-[40%] ">
-          <img src={logo} alt="logo" className="w-full " />
-        </div>
-        <div className="basis-[60%] flex flex-col">
-          <div
-            className={`text-${color.substring(
-              3
-            )} text-[21px] md:text-[28px] lg:text-[22px] xl:text-[32px] font-medium flex justify-center sm:justify-start items-center h-full sm:h-auto 2xl:whitespace-nowrap`}
-          >
+      <div className={`w-full lg:max-w-[671px] h-3 ${color}`} />
+      <div className="flex flex-row gap-[18px] lg:gap-10 my-5 overflow-hidden lg:overflow-visible">
+        <img src={logo} alt="logo" className="object-contain w-[32%] lg:w-auto" />
+        <div className="flex flex-col">
+          <div className={`text-${color.substring(3)} text-[22px] lg:text-[32px] font-medium tracking-[-0.44px]`}>
             {name}
           </div>
-          <div className="hidden sm:block w-[71px] h-0.5 bg-[#60b3d7]" />
-          <div className="hidden sm:block mt-[7px]">
-            <p
-              className={`text-${color.substring(
-                3
-              )} text-lg md:text-xl font-semibold`}
-            >
-              Lĩnh vực:
-            </p>
-            <p className="text-black-text text-base md:text-xl font-medium md:font-semibold">
-              {linhvuc}
-            </p>
-          </div>
+          <div className={`hidden lg:block w-[71px] h-0.5 bg-${color.substring(3)}`} />
+          <p className={`hidden lg:block text-${color.substring(3)} text-xl font-semibold`}>
+            Lĩnh vực:
+          </p>
+          <p className="hidden lg:block text-black-text text-xl font-semibold">{linhvuc}</p>
         </div>
       </div>
-      {/* linh vuc mobile */}
-      <div className="block sm:hidden">
-        <p className={`text-${color.substring(3)} text-lg font-semibold`}>
+      <div className="flex flex-col gap-2 lg:hidden">
+        <p className={`text-${color.substring(3)} text-xl font-bold`}>
           Lĩnh vực:
         </p>
-        <p className="text-black-text text-lg font-medium ">{linhvuc}</p>
+        <p className="text-black-text text-[18px] font-medium mb-[10px]">{linhvuc}</p>
       </div>
-      <p className=" text-blue-secondary text-lg sm:text-xl font-bold mb-2 mt-2.5 sm:mt-0">
-        Thông tin công ty
-      </p>
-      <p className="text-black-text text-lg font-medium">{text1}</p>
-      <br />
-      {text2 && <p className="text-black-text text-lg font-medium">{text2}</p>}
+      <div className="flex flex-col gap-2">
+        <p className=" text-blue-secondary text-xl font-bold">
+          Thông tin công ty
+        </p>
+        <p className="text-black-text text-lg font-medium">{text1}</p>
+        {text2 && <p className="text-black-text text-lg font-medium">{text2}</p>}
+      </div>
+      
     </div>
   );
 };

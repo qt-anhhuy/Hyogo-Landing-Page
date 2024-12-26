@@ -12,7 +12,7 @@ import SecSlider from "@components/SecSlider/SecSlider";
 export default function Home() {
   return (
     <>
-      {/* <Header /> */}
+      <Header />
       <SecInformation />
       <SecParticipants />
       <SecReason />

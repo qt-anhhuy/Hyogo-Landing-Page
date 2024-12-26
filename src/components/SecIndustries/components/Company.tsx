@@ -13,29 +13,50 @@ const Company = ({ logo, name, linhvuc, text1, text2 }: CompanyProps) => {
       ? "bg-blue-secondary"
       : "bg-yellow";
   return (
-    <div className="flex flex-col max-w-[41.94rem]">
-      <div className="max-w-[671px] min-h-[341px]">
+    <div className="flex flex-col ">
+      <div className="w-full h-auto">
         <iframe
-          src="https://youtu.be/7xbKejvXIGE?si=IsClS7fXULBzAySc"
+          className="w-full min-h-[340px]"
+          src="https://www.youtube.com/embed/7xbKejvXIGE?list=RD7xbKejvXIGE"
           allowFullScreen
-          className="w-full h-full"
-        />
+        ></iframe>
       </div>
-      <div className={`max-w-[671px] h-3 ${color}`} />
-      <div className="flex flex-row gap-10 my-5">
-        <img src={logo} alt="logo" />
-        <div className="flex flex-col">
-          <div className={`text-${color.substring(3)} text-[32px] font-medium`}>
+      <div className={`w-full h-3 ${color}`} />
+      <div className="flex flex-row gap-3 sm:gap-10 my-5">
+        <div className="basis-[40%] ">
+          <img src={logo} alt="logo" className="w-full " />
+        </div>
+        <div className="basis-[60%] flex flex-col">
+          <div
+            className={`text-${color.substring(
+              3
+            )} text-[21px] md:text-[28px] lg:text-[22px] xl:text-[32px] font-medium flex justify-center sm:justify-start items-center h-full sm:h-auto 2xl:whitespace-nowrap`}
+          >
             {name}
           </div>
-          <div className="w-[71px] h-0.5 bg-[#60b3d7]" />
-          <p className={`text-${color.substring(3)} text-xl font-semibold`}>
-            Lĩnh vực:
-          </p>
-          <p className="text-black-text text-xl font-semibold">{linhvuc}</p>
+          <div className="hidden sm:block w-[71px] h-0.5 bg-[#60b3d7]" />
+          <div className="hidden sm:block mt-[7px]">
+            <p
+              className={`text-${color.substring(
+                3
+              )} text-lg md:text-xl font-semibold`}
+            >
+              Lĩnh vực:
+            </p>
+            <p className="text-black-text text-base md:text-xl font-medium md:font-semibold">
+              {linhvuc}
+            </p>
+          </div>
         </div>
       </div>
-      <p className=" text-blue-secondary text-xl font-bold mb-2">
+      {/* linh vuc mobile */}
+      <div className="block sm:hidden">
+        <p className={`text-${color.substring(3)} text-lg font-semibold`}>
+          Lĩnh vực:
+        </p>
+        <p className="text-black-text text-lg font-medium ">{linhvuc}</p>
+      </div>
+      <p className=" text-blue-secondary text-lg sm:text-xl font-bold mb-2 mt-2.5 sm:mt-0">
         Thông tin công ty
       </p>
       <p className="text-black-text text-lg font-medium">{text1}</p>

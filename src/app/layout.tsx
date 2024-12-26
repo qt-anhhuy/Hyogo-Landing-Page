@@ -33,7 +33,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.variable} ${just.variable}  ${geomanist.variable} ${din.variable} font-inter antialiased`}
+        className={`${inter.variable} ${just.variable}  ${geomanist.variable} ${din.variable} font-inter antialiased overflow-x-hidden`}
       >
         {children}
       </body>

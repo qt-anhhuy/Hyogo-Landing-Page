@@ -48,38 +48,43 @@ const SecReason = () => {
       className="relative bg-no-repeat bg-cover pt-[20.75rem] pb-[14rem]"
       style={{ backgroundImage: "url('/images/header/bg-footer.jpeg')" }}
     >
-      <div className="relative text-center text-[#029fc8]/10 text-[150px] font-bold font-geomanist">
-        HYOGO JOB FAIR PRE-EVENT
-        <img
-          src="/images/icons/icon-habatan4.png"
-          alt="reason"
-          className="absolute top-[35%] left-[29%]"
-        />
-        <div className="absolute bottom-[-10%] left-[37%]">
-          <p className="text-black-text text-[32px] font-extrabold text-center uppercase leading-[50px]">
-            vì sao sinh viên
-          </p>
-          <div className="text-blue-secondary text-[32px] font-extrabold text-center uppercase leading-[50px]">
-            không nên bỏ lỡ sự kiện này
+      <div className=" text-center text-[#029fc8]/10 text-5xl sm:text-[150px] font-normal font-geomanist leading-none tracking-tighter">
+        HYOGO JOB FAIR PRE-EVENTEVE
+      </div>
+      <div className="container mx-auto lg:relative">
+        <div className="absolute top-[-15%] left-[20%]  flex flex-row justify-center items-center gap-x-1">
+          <img
+            src="/images/icons/icon-habatan4.png"
+            alt="reason"
+            className=""
+          />
+          <div className="">
+            <p className="text-black-text text-[28px] lg:text-[32px] font-extrabold text-center uppercase leading-10 lg:leading-[50px]">
+              vì sao sinh viên
+            </p>
+            <div className="text-blue-secondary text-[28px] lg:text-[32px] font-extrabold text-center uppercase leading-10 lg:leading-[50px]">
+              không nên bỏ lỡ sự kiện này
+            </div>
           </div>
         </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 pt-[8.5rem] gap-y-8 xl:gap-y-12 gap-x-14 xl:gap-x-[25.93rem]">
+          {reasons.map((reason, index) => (
+            <ReasonItem
+              key={index}
+              title={reason.title}
+              description={reason.description}
+              icon={reason.icon}
+              isLeft={reason.isLeft}
+            />
+          ))}
+        </div>
+        <img
+          src="/images/SecReason/person.png"
+          alt="img"
+          className="lg:absolute lg:bottom-[-30%] lg:left-[20%]"
+        />
       </div>
-      <div className="grid grid-cols-2 pt-[6.43rem] gap-y-12 gap-x-[25.93rem]">
-        {reasons.map((reason, index) => (
-          <ReasonItem
-            key={index}
-            title={reason.title}
-            description={reason.description}
-            icon={reason.icon}
-            isLeft={reason.isLeft}
-          />
-        ))}
-      </div>
-      <img
-        src="/images/SecReason/person.png"
-        alt="img"
-        className="absolute bottom-8 left-[28%]"
-      />
     </div>
   );
 };

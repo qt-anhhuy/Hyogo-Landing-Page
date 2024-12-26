@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useMemo } from "react";
 import ReasonItem from "./components/ReasonItem";
 
 const SecReason = () => {
@@ -43,32 +43,60 @@ const SecReason = () => {
       isLeft: true,
     },
   ];
+
+  // Sắp xếp lại mảng cho mobile view
+  const mobileReasons = useMemo(() => {
+    const leftItems = reasons.filter((_, index) => index % 2 === 0);
+    const rightItems = reasons.filter((_, index) => index % 2 === 1);
+    return [...leftItems, ...rightItems];
+  }, []);
+
   return (
     <div
-      className="relative bg-no-repeat bg-cover pt-[20.75rem] pb-[14rem]"
+      className="relative bg-no-repeat bg-cover pt-[20.75rem] lg:pb-[14rem]"
       style={{ backgroundImage: "url('/images/header/bg-footer.jpeg')" }}
     >
-      <div className=" text-center text-[#029fc8]/10 text-5xl sm:text-[150px] font-normal font-geomanist leading-none tracking-tighter">
-        HYOGO JOB FAIR PRE-EVENTEVE
+      <div className="text-center text-[#029fc8]/10 text-[48px] md:text-[100px] lg:text-[150px] font-normal font-geomanist leading-none tracking-tighter">
+        HYOGO JOB FAIR PRE-EVENT
       </div>
-      <div className="container mx-auto lg:relative">
-        <div className="absolute top-[-15%] left-[20%]  flex flex-row justify-center items-center gap-x-1">
-          <img
-            src="/images/icons/icon-habatan4.png"
-            alt="reason"
-            className=""
-          />
-          <div className="">
-            <p className="text-black-text text-[28px] lg:text-[32px] font-extrabold text-center uppercase leading-10 lg:leading-[50px]">
-              vì sao sinh viên
-            </p>
-            <div className="text-blue-secondary text-[28px] lg:text-[32px] font-extrabold text-center uppercase leading-10 lg:leading-[50px]">
-              không nên bỏ lỡ sự kiện này
+      <div className="container mx-auto relative -mt-[100px]">
+        <div className="w-full flex flex-col items-center justify-center">
+          <div className="flex flex-row gap-x-4">
+            <div className="hidden md:flex flex-row items-center gap-x-4">
+              <img
+                src="/images/icons/icon-habatan4.png"
+                alt="reason"
+                className="w-auto h-auto object-contain items-start"
+              />
+              <div className="flex flex-col">
+                <p className="text-black-text text-[28px] lg:text-[32px] font-extrabold text-center uppercase leading-10 lg:leading-[50px]">
+                  vì sao sinh viên
+                </p>
+                <div className="text-blue-secondary text-[28px] lg:text-[32px] font-extrabold text-center uppercase leading-10 lg:leading-[50px]">
+                  không nên bỏ lỡ sự kiện này
+                </div>
+              </div>
+            </div>
+
+            <div className="flex md:hidden flex-col gap-y-4">
+              <img
+                src="/images/icons/icon-habatan4.png"
+                alt="reason"
+                className="w-[95px] h-[95px] object-contain pl-5 items-start"
+              />
+              <div className="flex flex-col">
+                <p className="text-black-text text-[28px] lg:text-[32px] font-extrabold text-center uppercase leading-10 lg:leading-[50px]">
+                  vì sao sinh viên
+                </p>
+                <div className="text-blue-secondary text-[28px] lg:text-[32px] font-extrabold text-center uppercase leading-10 lg:leading-[50px]">
+                  không nên bỏ lỡ sự kiện này
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 pt-[8.5rem] gap-y-8 xl:gap-y-12 gap-x-14 xl:gap-x-[25.93rem]">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-y-8 xl:gap-y-12 gap-x-14 xl:gap-x-[25.93rem] mt-[1.6875rem] px-[0.9375rem]">
           {reasons.map((reason, index) => (
             <ReasonItem
               key={index}
@@ -82,7 +110,7 @@ const SecReason = () => {
         <img
           src="/images/SecReason/person.png"
           alt="img"
-          className="lg:absolute lg:bottom-[-30%] lg:left-[20%]"
+          className="w-full max-w-[800px] mx-auto lg:absolute lg:bottom-[-30%] lg:left-[50%] lg:transform lg:-translate-x-1/2"
         />
       </div>
     </div>

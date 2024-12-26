@@ -29,9 +29,9 @@ const Footer = () => {
     },
   ];
   return (
-    <section className=" pb-6 ">
-      <div className=" border border-[#dedede] 2xl:mx-[8.25rem] md:mb-5 2xl:mb-10"></div>
-      <div className="pl-5 pr-4 md:pl-[3rem] md:pr-[3rem] lg:pl-[7rem] lg:pr-[4rem] 2xl:pl-[15.75rem] 2xl:pr-[9.5rem] flex flex-col lg:flex-row gap-12 2xl:gap-0 justify-between items-start">
+    <section className="container mx-auto pb-6 ">
+      <div className=" border border-[#dedede] md:mb-5 2xl:mb-10"></div>
+      <div className=" flex flex-col lg:flex-row gap-12 2xl:gap-0 justify-between items-start">
         <div className="flex flex-col items-start gap-[29px] pt-5">
           <img
             src="/images/header/hyogo-logo-footer.png"

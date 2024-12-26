@@ -48,9 +48,9 @@ export default function Menu() {
     <>
       <nav className="flex flex-row justify-between items-center pt-[5px] pr-[2px] mt-[3rem] lg:mt-0">
         <img
-          src="/images/header/hyogo-logo.png"
+          src="/images/header/logohyogo.png"
           alt="logo"
-          className="hidden md:block"
+          className="hidden md:block max-w-[228px]"
         />
         <img
           src="/images/header/logo-mb.png"

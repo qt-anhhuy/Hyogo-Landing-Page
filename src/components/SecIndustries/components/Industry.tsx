@@ -14,6 +14,9 @@ const LayeredSlider = ({ setSelectedIndustry }: LayeredSliderProps) => {
   ];
 
   const getCardStyles = (index: number) => {
+    // Mobile styles
+
+    // Desktop styles
     if (hoveredIndex === null) {
       return "w-[280px] z-10";
     }
@@ -73,13 +76,29 @@ const LayeredSlider = ({ setSelectedIndustry }: LayeredSliderProps) => {
     return "translate-x-0";
   };
 
+  const getMobileStyles = (index: number) => {
+    if (hoveredIndex === null) {
+      // Default stacked layout
+      return `translate-y-[${index * 80}px] z-${40 - index * 10}`;
+    }
+
+    if (index === hoveredIndex) {
+      return "translate-y-0 z-50 scale-105";
+    }
+
+    if (index < hoveredIndex) {
+      return `translate-y-[${index * 80}px] z-${40 - index * 10}`;
+    }
+
+    return `translate-y-[${(index - 1) * 80 + 120}px] z-${40 - index * 10}`;
+  };
   return (
-    <div className="w-full h-[300px] flex justify-center items-center overflow-hidden pl-[6rem]">
-      <div className="flex justify-center items-center relative -mx-20">
+    <div className="hidden w-full h-[300px] md:flex justify-center items-center overflow-hidden pl-[6rem]">
+      <div className="flex md:flex-row flex-col justify-center items-center relative -mx-20">
         {slides.map((slider, index) => (
           <div
             key={index}
-            className={`transition-all duration-300 cursor-pointer -ml-24
+            className={`transition-all duration-300 cursor-pointer -ml-24 
               ${getCardStyles(index)} ${getTransform(index)}`}
             onMouseEnter={() => setHoveredIndex(index)}
             onMouseLeave={() => setHoveredIndex(2)}
@@ -97,6 +116,30 @@ const LayeredSlider = ({ setSelectedIndustry }: LayeredSliderProps) => {
         ))}
       </div>
     </div>
+
+    //  mobile slider
+    //  <div className="md:hidden w-full h-[500px] relative px-4">
+    //   <div className="relative w-full flex flex-col items-center gap-6">
+    //     {slides.map((slide, index) => (
+    //       <div
+    //         key={index}
+    //         className={`absolute -[280px] mx-auto transition-all duration-300 cursor-pointer
+    //           ${getMobileStyles(index)}`}
+    //         onMouseEnter={() => setHoveredIndex(index)}
+    //         onMouseLeave={() => setHoveredIndex(2)}
+    //         onClick={() =>
+    //           setHoveredIndex(index === hoveredIndex ? 2 : index)
+    //         }
+    //       >
+    //         <img
+    //           src={slide.image}
+    //           alt={slide.id}
+    //           className="w-full object-contain shadow-lg rounded-lg"
+    //         />
+    //       </div>
+    //     ))}
+    //   </div>
+    // </div>
   );
 };
 

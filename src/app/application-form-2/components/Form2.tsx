@@ -36,8 +36,8 @@ const Page = () => {
     };
 
   return (
-    <div className="mx-auto max-w-[572px]">
-      <div className="p-8 mt-[4.5rem] bg-white rounded-lg shadow flex flex-col gap-8">
+    <div className="mx-auto flex flex-col justify-center items-center max-w-[600px] ">
+      <div className="p-8 mt-[4.5rem] bg-white rounded-lg shadow flex flex-col gap-8 w-full lg:w-fit">
         <div>
           <CheckboxGroup
             title="Chọn 2 doanh nghiệp bạn quan tâm nhất"
@@ -58,8 +58,7 @@ const Page = () => {
           className="
           appearance-none
           w-7 h-5 
-          border border-black 
-          rounded 
+          border-2 border-black 
           ml-4 mr-3
           cursor-pointer 
           checked:bg-blue-secondary
@@ -99,7 +98,7 @@ const Page = () => {
           </span>
         </div>
       </div>
-      <div className="flex flex-row justify-between items-center">
+      <div className="flex flex-row justify-between items-center w-full">
         <button
           className="mt-[1.625rem] mb-[4rem] py-2 px-7 bg-white border border-[#029fc8] text-blue-secondary text-xl font-normal leading-tight rounded-[5px] flex items-center justify-center"
           onClick={() => router.push("/application-form")}

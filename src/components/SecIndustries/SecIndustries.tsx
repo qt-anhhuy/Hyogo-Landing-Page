@@ -22,7 +22,7 @@ const industriesData: Industry[] = [
   {
     id: "nhansu",
     title: "NHÂN SỰ",
-    color: "bg-[#60b3d7]",
+    color: "bg-blue-secondary",
     img: "/images/companies/nhansu.png",
     companies: [
       {
@@ -89,11 +89,11 @@ const industriesData: Industry[] = [
   {
     id: "sanxuat",
     title: "SẢN XUẤT",
-    color: "bg-[#60b3d7]",
+    color: "bg-blue-secondary",
     img: "/images/companies/sanxuat.png",
     companies: [
       {
-        logo: "/images/companies/Aspark.png",
+        logo: "/images/companies/aspark.png",
         name: "Aspark Co., Ltd.",
         linhvuc: "Sản xuất",
         text1:
@@ -120,7 +120,7 @@ const industriesData: Industry[] = [
           "Vị trí tuyển dụng: Phát triển công nghệ, vị trí công việc chung, quản lý sản xuất",
       },
       {
-        logo: "/images/companies/Kako.png",
+        logo: "/images/companies/kako.png",
         name: "Kako Technos Co., Ltd.",
         linhvuc: "Sản xuất",
         text1:
@@ -144,35 +144,46 @@ const industriesData: Industry[] = [
         text2:
           "Vị trí mong muốn tuyển dụng: Phát triển công nghệ, Kỹ sư sản xuất, vv.",
       },
+      {
+        logo: "/images/companies/IBES.png",
+        name: "IBES techno Co.,Ltd",
+        linhvuc: "Sản xuất",
+        text1:
+          "Công ty TNHH IBES Techno được thành lập vào năm 1977. Chủ yếu tham gia vào ngành sản xuất. Công ty cung cấp dịch vụ trọn gói, từ thiết kế và sản xuất đến giao hàng các loại tấm pin cao thế và hạ thế. Hiện tại, có sáu nhân viên người Việt Nam và một nhân viên người Trung Quốc. Đây là công ty mà bạn có thể yên tâm làm việc và phát triển trong thời gian dài.",
+        text2: "Vị trí tuyển dụng: Phát triển công nghệ, quản lý sản xuất",
+      },
     ],
   },
 ];
 const SecIndustries = () => {
   const [selectedIndustry, setSelectedIndustry] = useState<string>("sanxuat");
   const [hoveredId, setHoveredId] = useState<string | null>(null);
-  console.log(selectedIndustry);
 
   const selectedCompanies =
     industriesData.find((ind) => ind.id === selectedIndustry)?.companies || [];
   return (
-    <div className="flex flex-col justify-center items-center w-full pl-[15.375rem] pr-[16rem] pt-10 pb-[4.875rem]">
+    <div className="flex flex-col justify-center items-center w-full container mx-auto pt-10 pb-[4.875rem]">
       <SecTitle title="đồng tổ chức" />
       <div className="flex flex-row justify-center items-center mt-[3rem] gap-10 pb-[6rem]">
         <img src="/images/header/hyogo-logo.png" alt="logo" />
-        <div className="w-64 h-[108px] bg-[#e8e8e8]" />
+        <img src="/images/companies/jetro.png" alt="logo" />
       </div>
       {/* Slider Section */}
 
       <Industry setSelectedIndustry={setSelectedIndustry} />
 
       {/* Title Section */}
-      <h2 className="text-[#f7b928] text-3xl font-bold my-[3.25rem]">
+      <h2
+        className={`text-${industriesData
+          .find((ind) => ind.id === selectedIndustry)
+          ?.color.substring(3)} text-3xl font-bold my-[3.25rem]`}
+      >
         KHỐI NGÀNH{" "}
         {industriesData.find((ind) => ind.id === selectedIndustry)?.title}
       </h2>
 
       {/* Companies Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-[4.625rem] w-full ">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gr w-full gap-[4rem]">
         {selectedCompanies.map((company, index) => (
           <Company
             key={index}

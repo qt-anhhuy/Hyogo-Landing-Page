@@ -41,8 +41,8 @@ const Form1 = () => {
     console.log(formData);
   };
   return (
-    <div className="mx-auto ">
-      <div className="p-8 mt-10 bg-white rounded-lg shadow">
+    <div className=" mx-auto w-full lg:w-auto">
+      <div className="p-8 mt-5 md:mt-10 bg-white rounded-lg shadow">
         <form onSubmit={handleSubmit} className="space-y-6">
           <TextField
             label="Họ và Tên*"
@@ -107,7 +107,7 @@ const Form1 = () => {
       </div>
       <div className="flex justify-end">
         <button
-          className="mt-[1.625rem] mb-[4rem] py-3 px-7 bg-blue-secondary text-white text-xl font-semibold leading-tight rounded-[5px] flex items-center justify-center"
+          className="mt-[1.625rem] mb-7 md:mb-[4rem] py-3 px-7 bg-blue-secondary text-white text-xl font-semibold leading-tight rounded-[5px] flex items-center justify-center"
           onClick={() => router.push("/application-form-2")}
         >
           Tiếp theo

@@ -39,7 +39,7 @@ const industriesData: Industry[] = [
   {
     id: "congnghe",
     title: "CÔNG NGHỆ THÔNG TIN",
-    color: "bg-[#f7b928]",
+    color: "bg-yellow",
     img: "/images/companies/cntt.png",
     companies: [
       {
@@ -64,7 +64,7 @@ const industriesData: Industry[] = [
   {
     id: "xaydung",
     title: "XÂY DỰNG",
-    color: "bg-[#f7b928]",
+    color: "bg-yellow",
     img: "/images/companies/xaydung.png",
     companies: [
       {
@@ -162,28 +162,31 @@ const SecIndustries = () => {
   const selectedCompanies =
     industriesData.find((ind) => ind.id === selectedIndustry)?.companies || [];
   return (
-    <div className="flex flex-col justify-center items-center w-full container mx-auto pt-10 pb-[4.875rem]">
+    <div className="flex flex-col justify-center items-center w-full px-4 lg:pl-[15.375rem] lg:pr-[16rem] pt-10 pb-[4.875rem]">
       <SecTitle title="đồng tổ chức" />
-      <div className="flex flex-row justify-center items-center mt-[3rem] gap-10 pb-[6rem]">
-        <img src="/images/header/hyogo-logo.png" alt="logo" />
-        <img src="/images/companies/jetro.png" alt="logo" />
+      <div className="flex flex-row justify-center items-center mt-[3rem] gap-[22px] lg:gap-10 pb-[6rem] w-full">
+        <img src="/images/header/hyogo-logo.png" alt="logo" className="w-[166px] lg:w-auto"/>
+        <img src="/images/companies/jetro.png" alt="logo" className="w-[166px] lg:w-auto"/>
       </div>
       {/* Slider Section */}
 
-      <Industry setSelectedIndustry={setSelectedIndustry} />
+      <Industry
+        selectedIndustry={selectedIndustry}
+        setSelectedIndustry={setSelectedIndustry}
+      />
 
       {/* Title Section */}
       <h2
         className={`text-${industriesData
           .find((ind) => ind.id === selectedIndustry)
-          ?.color.substring(3)} text-3xl font-bold my-[3.25rem]`}
+          ?.color.substring(3)} text-[28px] lg:text-3xl font-bold my-[21px] lg:my-[3.25rem] text-center`}
       >
         KHỐI NGÀNH{" "}
         {industriesData.find((ind) => ind.id === selectedIndustry)?.title}
       </h2>
 
       {/* Companies Grid */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gr w-full gap-[4rem]">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gr gap-8 lg:gap-[4rem] w-full">
         {selectedCompanies.map((company, index) => (
           <Company
             key={index}

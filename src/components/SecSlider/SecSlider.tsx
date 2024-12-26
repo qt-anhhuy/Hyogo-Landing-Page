@@ -96,15 +96,15 @@ const SecSlider = () => {
 
       <div className="flex flex-col md:flex-row justify-between items-center px-4 md:px-8 lg:px-[8.2rem] gap-6 md:gap-8">
         <div className="text-center md:text-left">
-          <p className="text-black-text text-2xl md:text-3xl lg:text-[32px] font-semibold">
+          <p className="text-black-text md:text-3xl lg:text-[32px] text-[28px] font-semibold text-center">
             TẠI SAO CHỌN SỰ NGHIỆP TẠI
           </p>
-          <p className="text-blue-secondary text-5xl md:text-6xl lg:text-[80px] font-normal font-just">
+          <p className="text-blue-secondary md:text-6xl lg:text-[80px] text-[54px] font-normal font-just text-center">
             Hyogo Prefecture
           </p>
         </div>
         <div className="max-w-full md:max-w-[42.875rem] px-4 md:px-0">
-          <p className="text-center md:text-left text-black-text text-base md:text-lg lg:text-xl font-normal">
+          <p className="text-center md:text-left text-black-text text-base md:text-lg md:text-[20px] text-[16px] font-normal">
             Tỉnh Hyogo đi đầu trong đổi mới, tích cực nuôi dưỡng các ngành công
             nghiệp công nghệ cao và các sản phẩm tiên phong. Tỉnh Hyogo là nơi
             có cơ sở bức xạ synchrotron hiệu suất cao nhất thế giới, "SPring-8",

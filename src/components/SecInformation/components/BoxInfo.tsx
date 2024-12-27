@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+
 interface BoxInfoProps {
   icon: string;
   number?: string;
@@ -10,7 +11,7 @@ interface BoxInfoProps {
 
 export default function BoxInfo({ icon, number, text, content, className }: BoxInfoProps) {
   return (
-    <div className={`flex flex-col items-center pb-4 ${className || ''}`}>
+    <div className={`flex flex-col items-center lg:pb-4 ${className || ''}`}>
       <Image
         src={icon}
         alt="icon"
@@ -29,15 +30,25 @@ export default function BoxInfo({ icon, number, text, content, className }: BoxI
       />
       <div className="flex flex-col items-center justify-center text-center mt-2 w-full">
         {number && (
-          <p className="text-blue-tertiary text-5xl font-extrabold">{number}</p>
+          <p className="text-blue-tertiary text-[32px] lg:text-5xl font-extrabold">{number}</p>
         )}
         {text && (
-          <p className="text-blue-tertiary text-[22px] lg:text-[31px] font-extrabold ">
-            {text}
+          <p className="text-blue-tertiary text-[22px] lg:text-[31px] font-extrabold">
+            {text.split('|').map((line, index) => (
+              <span key={index}>
+                {line}
+                {index < text.split('|').length - 1 && <br className="block lg:hidden" />}
+              </span>
+            ))}
           </p>
         )}
-        <p className="text-blue-tertiary text-base lg:text-lg font-bold flex justify-center items-center w-full mt-2">
-          {content}
+        <p className="text-blue-tertiary text-xs lg:text-lg font-bold w-5/6 lg:mt-2">
+          {content.split('|').map((line, index) => (
+            <span key={index}>
+              {line}
+              {index < content.split('|').length - 1 && <br className="block lg:hidden" />}
+            </span>
+          ))}
         </p>
       </div>
     </div>

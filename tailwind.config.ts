@@ -22,7 +22,7 @@ const config: Config = {
         sm: "640px",
         md: "768px",
         lg: "1024px",
-        xl: "1417px",
+        xl: "1280px",
         "2xl": "1417px ",
       },
     },
@@ -55,7 +55,7 @@ const config: Config = {
         "black-btn": "#002833",
         "black-text": "#34414D",
         "black-checkbox": "#242426",
-        "yellow": "#F1B701",
+        yellow: "#F1B701",
         "gray-text": "#989898",
         "gray-placeholder": "#7f7f7f",
       },
@@ -131,8 +131,6 @@ const config: Config = {
     },
   },
   plugins: [require("tailwindcss-animate")],
-  safelist: [
-    "text-yellow",
-  ],
+  safelist: ["text-yellow"],
 };
 export default config;

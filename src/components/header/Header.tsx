@@ -124,7 +124,7 @@ export default function Header() {
                     </div>
                   </div>
                 }
-                onClick={() => router.push("/application-form")}
+                onClick={() => router.push("/coming-soon")}
                 className="max-w-[252px]"
               />
             </div>
@@ -135,7 +135,7 @@ export default function Header() {
             <Button
               title="Đăng ký ngay"
               size="large"
-              onClick={() => router.push("/application-form")}
+              onClick={() => router.push("/coming-soon")}
             />
           </div>
         </div>

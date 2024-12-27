@@ -47,7 +47,7 @@ const SecMarquee = () => {
         ))}
       </Marquee>
       <Marquee
-        className="block sm:hidden pt-3 pb-5 [--duration:20s]"
+        className="block sm:hidden pb-2 [--duration:20s]"
         pauseOnHover
         reverse
       >

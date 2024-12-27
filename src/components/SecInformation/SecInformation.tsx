@@ -6,46 +6,51 @@ export default function SecInformation() {
     {
       icon: "/images/gif/gif-location-city.gif",
       number: "11",
-      content: "Công ty Nhật Bản| tham gia sự kiện",
+      content: "Công ty Nhật Bản<br/> tham gia sự kiện",
+      contentMb: "Công ty Nhật Bản| tham gia sự kiện",
     },
     {
       icon: "/images/gif/gif-conversation.gif",
       number: "100",
-      content: "Giới hạn| số lượng sinh viên| tham gia Offline",
+      content: "Giới hạn số lượng sinh viên<br/> tham gia Offline",
+      contentMb: "Giới hạn| số lượng sinh viên| tham gia Offline",
     },
     {
       icon: "/images/gif/gif-physic.gif",
       number: "04",
-      content: "Lĩnh vực| Sản xuất/ CNTT/| Xây dựng/ Nhân sự",
+      content: "Lĩnh vực Sản xuất/ CNTT/<br/> Xây dựng/ Nhân sự",
+      contentMb: "Lĩnh vực| Sản xuất/ CNTT/| Xây dựng/ Nhân sự",
     },
     {
       icon: "/images/gif/gif-video.gif",
       text: "Không| giới hạn",
-      content: "Số lượng sinh viên| tham gia Online",
+      content: "Số lượng sinh viên<br/> tham gia Online",
+      contentMb: "Số lượng sinh viên| tham gia Online",
     },
     {
       icon: "/images/gif/gif-translator.gif",
       text: "Không| yêu cầu",
       content: "Tiếng Nhật",
+      contentMb: "Tiếng Nhật",
     },
   ];
 
   return (
-    <section className="pb-9">
+    <section id="program-introduction" className="pb-9">
       <div className="flex flex-col lg:flex-row justify-between items-start">
         <div className="flex flex-col lg:flex-row">
-          <div className="block lg:hidden w-full flex justify-center">
+          <div className=" lg:hidden w-full flex justify-center">
             <div className="relative flex items-center justify-center">
               <img
                 src="/images/SecInformation/info1.png"
                 alt="img"
-                style={{width: '80%'}}
+                style={{ width: "80%" }}
                 className="pt-[15px] mr-3"
               />
               <img
                 src="/images/SecInformation/info2.png"
                 alt="img"
-                style={{width: '40%'}}
+                style={{ width: "40%" }}
                 className="absolute bottom-[-10%] left-0"
               />
             </div>
@@ -53,7 +58,7 @@ export default function SecInformation() {
           <img
             src="/images/SecInformation/info1.png"
             alt="img"
-            style={{width: '50%' , height: "50%"}}
+            style={{ width: "50%", height: "50%" }}
             className="pt-[15px] mr-3 hidden lg:block"
           />
           <div className="pl-[7px] pt-[65px] flex flex-row gap-[7px] items-start">
@@ -89,7 +94,7 @@ export default function SecInformation() {
         <img
           src="/images/SecInformation/info2.png"
           alt="img"
-          style={{width: '20%', height: '20%'}}
+          style={{ width: "20%", height: "20%" }}
           className="hidden lg:block"
         />
       </div>
@@ -98,7 +103,7 @@ export default function SecInformation() {
         <img
           src="/images/SecInformation/Hyogo_Map.png"
           alt="img"
-          style={{width: '80%', height: "80%"}}
+          style={{ width: "80%", height: "80%" }}
           className="pb-[39px] block lg:hidden"
         />
 
@@ -111,7 +116,7 @@ export default function SecInformation() {
               Pre - Event là gì?
             </span>
           </div>
-          <div className="w-[90%] lg:w-[80%]">
+          <div className="w-full lg:w-[80%]">
             <p className="text-black-text text-lg font-medium leading-[38px]">
               Ngày hội việc làm tỉnh Hyogo - Nhật Bản là sự kiện đặc biệt do
               Chính quyền tỉnh Hyogo tổ chức. Sự kiện nhằm kết nối sinh viên
@@ -153,23 +158,26 @@ export default function SecInformation() {
         <img
           src="/images/SecInformation/Hyogo_Map.png"
           alt="img"
-          style={{width: '90%', height: '90%'}}
+          style={{ width: "90%", height: "90%" }}
           className="pb-[39px] hidden lg:block"
         />
       </div>
 
-        <div className="w-[90%] lg:w-[75%] grid grid-cols-2 lg:grid-cols-5 gap-x-[62px] mx-auto">
-          {boxInfos.map((info, index) => (
-            <BoxInfo
-              key={index}
-              icon={info.icon}
-              number={info.number}
-              text={info.text}
-              content={info.content}
-              className={index === 0 ? "col-span-2 justify-self-center lg:col-span-1" : ""}
-            />
-          ))}
-        </div>
+      <div className="w-[90%] lg:w-[75%] grid grid-cols-2 lg:grid-cols-5 gap-x-[62px] mx-auto">
+        {boxInfos.map((info, index) => (
+          <BoxInfo
+            key={index}
+            icon={info.icon}
+            number={info.number}
+            text={info.text}
+            content={info.content}
+            contentMb={info.contentMb}
+            className={
+              index === 0 ? "col-span-2 justify-self-center lg:col-span-1" : ""
+            }
+          />
+        ))}
+      </div>
     </section>
   );
 }

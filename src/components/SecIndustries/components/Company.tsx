@@ -23,10 +23,12 @@ const Company = ({
   return (
     <div className="flex flex-col w-full lg:w-auto">
       <div className="w-full lg:max-w-[671px] h-auto">
-        <video preload="none" controls className="w-full lg:h-[340px]">
-          <source src={video} type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
+        <iframe
+          className="w-full lg:h-[340px]"
+          src={video}
+          allowFullScreen
+          loading="lazy"
+        ></iframe>
       </div>
       <div className={`w-full lg:max-w-[671px] h-3 ${color}`} />
       <div className="flex flex-row gap-[18px] lg:gap-10 my-5 overflow-hidden lg:overflow-visible">

@@ -7,39 +7,39 @@ const SecReason = () => {
       icon: "/images/icons/icon-exchange.svg",
       title: "Giao lưu, trao đổi",
       description:
-          "Giao lưu, trao đổi với các doanh nghiệp & nhà tuyển dụng từ Hyogo Nhật Bản.",
+        "Giao lưu, trao đổi với các doanh nghiệp & nhà tuyển dụng từ Hyogo Nhật Bản.",
     },
     {
       icon: "/images/icons/icon-note.svg",
       title: "Tư vấn nghề nghiệp & CV",
       description:
-          "Nhận tư vấn chỉnh sửa CV, kỹ năng phỏng vấn, tìm kiếm việc làm.",
+        "Nhận tư vấn chỉnh sửa CV, kỹ năng phỏng vấn, tìm kiếm việc làm.",
       isLeft: true,
     },
     {
       icon: "/images/icons/icon-bag.svg",
       title: "Độc quyền cho kỹ sư trẻ",
       description:
-          "Cơ hội nghề nghiệp độc quyền cho các kỹ sư trẻ trong các ngành CNTT, công nghệ ô tô, xây dựng và cơ khí, sản xuất thép và máy móc,...",
+        "Cơ hội nghề nghiệp độc quyền cho các kỹ sư trẻ trong các ngành CNTT, công nghệ ô tô, xây dựng và cơ khí, sản xuất thép và máy móc,...",
     },
     {
       icon: "/images/icons/icon-airplane.svg",
       title: "Tư vấn về cuộc sống tại Nhật Bản",
       description:
-          "Tìm hiểu thông tin và lưu ý quan trọng khi sinh sống và làm việc tại Nhật Bản.",
+        "Tìm hiểu thông tin và lưu ý quan trọng khi sinh sống và làm việc tại Nhật Bản.",
       isLeft: true,
     },
     {
       icon: "/images/icons/icon-map.svg",
       title: "Tiếp cận thị trường việc làm Nhật Bản",
       description:
-          "Cập nhật thông tin hữu ích về thị trường việc làm, văn hóa công ty, nhu cầu tuyển dụng, kỹ năng cần thiết tại Nhật Bản.",
+        "Cập nhật thông tin hữu ích về thị trường việc làm, văn hóa công ty, nhu cầu tuyển dụng, kỹ năng cần thiết tại Nhật Bản.",
     },
     {
       icon: "/images/icons/icon-chat.svg",
       title: "Gặp gỡ & giao lưu",
       description:
-          "Mở rộng mối quan hệ với đồng nghiệp và công ty trong ngành.",
+        "Mở rộng mối quan hệ với đồng nghiệp và công ty trong ngành.",
       isLeft: true,
     },
   ];
@@ -53,7 +53,8 @@ const SecReason = () => {
 
   return (
     <div
-      className="relative bg-repeat pt-[20.75rem] lg:pb-[14rem]"
+      id="benefits-of-participation"
+      className="relative bg-repeat pt-[13rem] md:pt-[20.75rem] lg:pb-[14rem]"
       style={{ backgroundImage: "url('/images/header/bg-footer.jpeg')" }}
     >
       <div className="text-center text-[#029fc8]/10 text-[48px] md:text-[100px] lg:text-[150px] font-normal font-geomanist leading-none tracking-tighter">

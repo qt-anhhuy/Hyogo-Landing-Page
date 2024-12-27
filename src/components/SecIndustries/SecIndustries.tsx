@@ -27,7 +27,7 @@ const industriesData: Industry[] = [
     img: "/images/companies/nhansu.png",
     companies: [
       {
-        video: "/video/hr/hr.mp4",
+        video: "https://youtube.com/embed/_hcbMACrDs8",
         logo: "/images/companies/pasona.png",
         name: "Pasona Inc.",
         linhvuc: "Nhân sự",
@@ -45,7 +45,7 @@ const industriesData: Industry[] = [
     img: "/images/companies/cntt.png",
     companies: [
       {
-        video: "/video/it/Hyogo_Fuji Data System.mp4",
+        video: "https://youtube.com/embed/_hcbMACrDs8",
         logo: "/images/companies/fuji-data.png",
         name: "Fuji Data System Inc.",
         linhvuc: "Công nghệ thông tin",
@@ -55,7 +55,7 @@ const industriesData: Industry[] = [
           "Vị trí mong muốn tuyển dụng: Phát triển công nghệ, xử lý thông tin",
       },
       {
-        video: "/video/it/Hyogo_Petabit.mp4",
+        video: "https://youtube.com/embed/_hcbMACrDs8",
         logo: "/images/companies/petabit.png",
         name: "Petabit Corporation",
         linhvuc: "Công nghệ thông tin",
@@ -72,7 +72,7 @@ const industriesData: Industry[] = [
     img: "/images/companies/xaydung.png",
     companies: [
       {
-        video: "/video/xaydung/SANKYU (subtitle).mp4",
+        video: "https://youtube.com/embed/_hcbMACrDs8",
         logo: "/images/companies/sankyu.png",
         name: "Sankyu Inc.",
         linhvuc: "Xây dựng",
@@ -82,7 +82,7 @@ const industriesData: Industry[] = [
           "Vị trí tuyển dụng: Phát triển công nghệ, quản lý, xây dựng: bảo trì máy móc",
       },
       {
-        video: "/video/xaydung/Hyogo_CBS.mp4.mp4",
+        video: "https://youtube.com/embed/_hcbMACrDs8",
         logo: "/images/companies/cbs.png",
         name: "CBS Group",
         linhvuc: "Xây dựng và thiết kế cơ khí",
@@ -99,7 +99,7 @@ const industriesData: Industry[] = [
     img: "/images/companies/sanxuat.png",
     companies: [
       {
-        video: "/video/sanxuat/Hyogo_Aspark(1).mp4",
+        video: "https://youtube.com/embed/GC9f6eVzh-8",
         logo: "/images/companies/aspark.png",
         name: "Aspark Co., Ltd.",
         linhvuc: "Sản xuất",
@@ -109,7 +109,7 @@ const industriesData: Industry[] = [
           "Vị trí mong muốn tuyển dụng: Phát triển công nghệ, quản lý sản xuất, xử lý thông tin",
       },
       {
-        video: "/video/sanxuat/Hyogo2024_Fuji spring.mp4",
+        video: "https://youtube.com/embed/JLcW2ZjMcd0",
         logo: "/images/companies/fuji.png",
         name: "FUJI SPRINGS CO.,INC",
         linhvuc: "Sản xuất các sản phẩm dập kim loại",
@@ -119,7 +119,7 @@ const industriesData: Industry[] = [
           "Vị trí mong muốn tuyển dụng: Phát triển công nghệ, vị trí tổng vụ",
       },
       {
-        video: "/video/sanxuat/Hyogo Machinery.mp4",
+        video: "https://youtube.com/embed/Xus4MK-sedI",
         logo: "/images/companies/hyogo.png",
         name: "HYOGO MACHINERY CO.,LTD",
         linhvuc: "Sản xuất thép và máy móc",
@@ -129,7 +129,7 @@ const industriesData: Industry[] = [
           "Vị trí tuyển dụng: Phát triển công nghệ, vị trí công việc chung, quản lý sản xuất",
       },
       {
-        video: "/video/sanxuat/Hyogo2024_Kakos Techno.mp4",
+        video: "https://youtube.com/embed/7RlaAQ2FRtE",
         logo: "/images/companies/kako.png",
         name: "Kako Technos Co., Ltd.",
         linhvuc: "Sản xuất",
@@ -138,7 +138,7 @@ const industriesData: Industry[] = [
         text2: "Vị trí tuyển dụng: Phát triển kỹ thuật",
       },
       {
-        video: "/video/sanxuat/14.ITOH DENKI CO.,LTD20241129(720p) (1).mp4",
+        video: "https://youtube.com/embed/LbnO-6Y0Jeg",
         logo: "/images/companies/itoh.png",
         name: "ITOH DENKI CO.,LTD",
         linhvuc: "Sản xuất",
@@ -147,7 +147,7 @@ const industriesData: Industry[] = [
         text2: "",
       },
       {
-        video: "/video/sanxuat/Hyogo2024_Okada Shell.mp4",
+        video: "https://youtube.com/embed/JSUEFvtFUp0",
         logo: "/images/companies/okada.png",
         name: "Okada Shell Co., Ltd.",
         linhvuc: "Sản xuất khuôn cát chất lượng cao",
@@ -166,7 +166,10 @@ const SecIndustries = () => {
   const selectedCompanies =
     industriesData.find((ind) => ind.id === selectedIndustry)?.companies || [];
   return (
-    <div className="flex flex-col justify-center items-center w-full px-4 lg:pl-[15.375rem] lg:pr-[16rem] pt-10 pb-[4.875rem]">
+    <div
+      id="list-of-companies"
+      className="flex flex-col justify-center items-center w-full px-4 lg:pl-[15.375rem] lg:pr-[16rem] pt-10 pb-[4.875rem]"
+    >
       <SecTitle title="đồng tổ chức" />
       <div className="flex flex-row justify-center items-center mt-[3rem] gap-[22px] lg:gap-10 pb-[6rem] w-full">
         <img

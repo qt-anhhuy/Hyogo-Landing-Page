@@ -125,7 +125,7 @@ const Menu = () => {
                     >
                       <Link
                         className={`flex items-center text-center text-base hover:text-blue-secondary ${
-                          pathname === item.path || index === 0
+                          pathname === item.path
                             ? "text-blue-secondary font-extrabold"
                             : "text-black-text font-semibold"
                         }`}
@@ -157,7 +157,7 @@ const Menu = () => {
                         </div>
                       </div>
                     }
-                    onClick={() => router.push("/application-form")}
+                    onClick={() => router.push("/coming-soon")}
                   />
                 </div>
               </>

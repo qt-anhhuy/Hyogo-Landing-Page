@@ -51,11 +51,17 @@ const SecSlider = () => {
   ];
 
   return (
-    <div className="flex flex-col gap-6 md:gap-8 py-6 md:py-8 lg:py-10">
+    <div
+      id="life-in-hyogo"
+      className="flex flex-col gap-6 md:gap-8 py-6 md:py-8 lg:py-10"
+    >
       <div className="hidden md:block w-full">
         <Marquee className="w-full" pauseOnHover>
           {[...slider1, ...slider1Mobile].map((item, index) => (
-            <div key={index} className={`mx-1 ${index % 2 === 1 ? "pt-12" : ""}`}>
+            <div
+              key={index}
+              className={`mx-1 ${index % 2 === 1 ? "pt-12" : ""}`}
+            >
               <img
                 src={item.img}
                 alt={`slider1-${index}`}
@@ -69,7 +75,10 @@ const SecSlider = () => {
       <div className="md:hidden w-full">
         <Marquee className="w-full" pauseOnHover>
           {slider1.map((item, index) => (
-            <div key={index} className={`mx-1 ${index % 2 === 1 ? "pt-8" : ""}`}>
+            <div
+              key={index}
+              className={`mx-1 ${index % 2 === 1 ? "pt-8" : ""}`}
+            >
               <img
                 src={item.img}
                 alt={`slider1-${index}`}
@@ -83,7 +92,10 @@ const SecSlider = () => {
       <div className="md:hidden w-full">
         <Marquee className="w-full" pauseOnHover reverse>
           {slider1Mobile.map((item, index) => (
-            <div key={index} className={`mx-1 ${index % 2 === 1 ? "pt-8" : ""}`}>
+            <div
+              key={index}
+              className={`mx-1 ${index % 2 === 1 ? "pt-8" : ""}`}
+            >
               <img
                 src={item.img}
                 alt={`slider1-mobile-${index}`}
@@ -118,9 +130,9 @@ const SecSlider = () => {
             mới.
           </p>
         </div>
-        <img 
-          src="/images/icons/Haba-tan6.png" 
-          alt="icon" 
+        <img
+          src="/images/icons/Haba-tan6.png"
+          alt="icon"
           className="w-24 md:w-32 lg:w-auto hidden md:block"
         />
       </div>
@@ -128,7 +140,10 @@ const SecSlider = () => {
       <div className="hidden md:block w-full">
         <Marquee className="w-full" reverse pauseOnHover>
           {[...slider2, ...slider2Mobile].map((item, index) => (
-            <div key={index} className={`mx-1 ${index % 2 === 1 ? "pt-12" : ""}`}>
+            <div
+              key={index}
+              className={`mx-1 ${index % 2 === 1 ? "pt-12" : ""}`}
+            >
               <img
                 src={item.img}
                 alt={`slider2-${index}`}
@@ -142,7 +157,10 @@ const SecSlider = () => {
       <div className="md:hidden w-full">
         <Marquee className="w-full" pauseOnHover>
           {slider2.map((item, index) => (
-            <div key={index} className={`mx-1 ${index % 2 === 1 ? "pt-8" : ""}`}>
+            <div
+              key={index}
+              className={`mx-1 ${index % 2 === 1 ? "pt-8" : ""}`}
+            >
               <img
                 src={item.img}
                 alt={`slider2-${index}`}
@@ -156,7 +174,10 @@ const SecSlider = () => {
       <div className="md:hidden w-full">
         <Marquee className="w-full" reverse pauseOnHover>
           {slider2Mobile.map((item, index) => (
-            <div key={index} className={`mx-1 ${index % 2 === 1 ? "pt-8" : ""}`}>
+            <div
+              key={index}
+              className={`mx-1 ${index % 2 === 1 ? "pt-8" : ""}`}
+            >
               <img
                 src={item.img}
                 alt={`slider2-mobile-${index}`}

@@ -1,33 +1,31 @@
 import React from "react";
 import BoxInfo from "./components/BoxInfo";
-import CopyRight from "@components/common/CopyRight";
 
 export default function SecInformation() {
   const boxInfos = [
     {
       icon: "/images/gif/gif-location-city.gif",
-
       number: "11",
-      content: "Công ty Nhật Bản tham gia sự kiện",
+      content: "Công ty Nhật Bản| tham gia sự kiện",
     },
     {
       icon: "/images/gif/gif-conversation.gif",
       number: "100",
-      content: "Giới hạn số lượng sinh viên tham gia Offline",
+      content: "Giới hạn| số lượng sinh viên| tham gia Offline",
     },
     {
       icon: "/images/gif/gif-physic.gif",
       number: "04",
-      content: "Lĩnh vực Sản xuất/ CNTT/ Xây dựng/ Nhân sự",
+      content: "Lĩnh vực| Sản xuất/ CNTT/| Xây dựng/ Nhân sự",
     },
     {
       icon: "/images/gif/gif-video.gif",
-      text: "Không giới hạn",
-      content: "Số lượng sinh viên tham gia Online",
+      text: "Không| giới hạn",
+      content: "Số lượng sinh viên| tham gia Online",
     },
     {
       icon: "/images/gif/gif-translator.gif",
-      text: "Không yêu cầu",
+      text: "Không| yêu cầu",
       content: "Tiếng Nhật",
     },
   ];
@@ -160,7 +158,7 @@ export default function SecInformation() {
         />
       </div>
 
-        <div className=" w-[75%] grid grid-cols-2 lg:grid-cols-5 gap-x-[62px] gap-y-[45px] mx-auto">
+        <div className="w-[90%] lg:w-[75%] grid grid-cols-2 lg:grid-cols-5 gap-x-[62px] mx-auto">
           {boxInfos.map((info, index) => (
             <BoxInfo
               key={index}

@@ -19,7 +19,7 @@ const ImgText = ({ images }: IProps) => {
                   <img src={item.img} alt='alt' className="w-[301px] h-[168px] 2xl:w-[392px] 2xl:h-[219px]"/>
                 </div>
                 <div
-                    className="w-[273px] h-[159px] 2xl:w-[345px] 2xl:h-[250px] p-5 2xl:py-14 2xl:px-10 -mt-8 2xl:-mt-12"
+                    className="w-[273px] h-[159px] 2xl:w-[345px] 2xl:h-[250px] p-5 2xl:py-14 2xl:px-12 -mt-8 2xl:-mt-12"
                     style={{
                         clipPath: "polygon(0% 0%, 100% 0, 100% 70%, 80% 100%, 0% 100%)",
                         backgroundColor: item.bg

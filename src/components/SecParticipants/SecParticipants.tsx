@@ -40,7 +40,7 @@ const SecParticipants = () => {
                         </div>
                         {/* text */}
                         <div
-                            className='mainContent flex flex-col xl:flex-row gap-3.5 xl:gap-[3.5rem] w-full justify-center items-center'>
+                            className='mainContent flex flex-col xl:flex-row gap-3.5 xl:gap-[3.5rem] w-full justify-center items-start xl:items-center'>
                             <h5 className='text-white text-[28px] font-extrabold whitespace-nowrap uppercase'>
                                 Đối tượng tham gia
                             </h5>
@@ -66,7 +66,7 @@ const SecParticipants = () => {
 
                 {/* LOWER PART */}
                 <div className='lower w-full relative overflow-visible'>
-                    <div className='w-full h-[785px] bg-[#0b6386]/50 xl:hidden'></div>
+                    <div className='w-full h-[785px] bg-[#0b6386] xl:hidden'></div>
                     {/* Image for breakpoint < 1280px */}
                     <img
                         src='/images/SecParticipants/IMG-sm.png'

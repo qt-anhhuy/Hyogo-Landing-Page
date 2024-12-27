@@ -6,7 +6,7 @@ import Form1 from "./components/Form1";
 const Page = () => {
   return (
     <div
-      className="bg-no-repeat bg-cover"
+      className="bg-repeat"
       style={{ backgroundImage: "url('/images/header/bg-footer.jpeg')" }}
     >
       <HeaderForm />

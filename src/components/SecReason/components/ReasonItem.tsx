@@ -40,7 +40,7 @@ const ReasonItem = ({ icon, title, description, isLeft }: ReasonItemProps) => {
       </div>
 
       {/* Mobile & Tablet View */}
-      <div className="lg:hidden w-full px-[0.9375rem]">
+      <div className="lg:hidden w-full">
         <div className="flex flex-row justify-start items-start gap-[1.625rem] w-full">
           <img src={icon} alt="icon" className="mt-1 w-[50px]" />
           <div className="flex flex-col gap-4 flex-1">

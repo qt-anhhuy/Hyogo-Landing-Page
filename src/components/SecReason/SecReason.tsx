@@ -53,7 +53,7 @@ const SecReason = () => {
 
   return (
     <div
-      className="relative bg-no-repeat bg-cover pt-[20.75rem] lg:pb-[14rem]"
+      className="relative bg-repeat pt-[20.75rem] lg:pb-[14rem]"
       style={{ backgroundImage: "url('/images/header/bg-footer.jpeg')" }}
     >
       <div className="text-center text-[#029fc8]/10 text-[48px] md:text-[100px] lg:text-[150px] font-normal font-geomanist leading-none tracking-tighter">
@@ -82,7 +82,7 @@ const SecReason = () => {
               <img
                 src="/images/icons/icon-habatan4.png"
                 alt="reason"
-                className="w-[95px] h-[95px] object-contain pl-5 items-start"
+                className="w-[95px] h-[95px] object-contain items-start"
               />
               <div className="flex flex-col">
                 <p className="text-black-text text-[28px] lg:text-[32px] font-extrabold text-center uppercase leading-10 lg:leading-[50px]">
@@ -96,7 +96,7 @@ const SecReason = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-y-8 xl:gap-y-12 gap-x-14 xl:gap-x-[25.93rem] mt-[1.6875rem] px-[0.9375rem]">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-y-8 xl:gap-y-12 gap-x-14 xl:gap-x-[25.93rem] mt-[1.6875rem] ">
           {reasons.map((reason, index) => (
             <ReasonItem
               key={index}
@@ -110,7 +110,7 @@ const SecReason = () => {
         <img
           src="/images/SecReason/person.png"
           alt="img"
-          className="w-full max-w-[800px] mx-auto lg:absolute lg:bottom-[-30%] lg:left-[50%] lg:transform lg:-translate-x-1/2"
+          className="w-full max-w-[800px] mx-auto lg:absolute lg:bottom-[-28%] lg:left-[50%] lg:transform lg:-translate-x-1/2"
         />
       </div>
     </div>

@@ -7,7 +7,7 @@ import Footer from "@components/footer/Footer";
 const page = () => {
   return (
     <div
-      className="bg-no-repeat bg-cover"
+      className="bg-repeat "
       style={{ backgroundImage: "url('/images/header/bg-footer.jpeg')" }}
     >
       <HeaderForm />

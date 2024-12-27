@@ -12,14 +12,14 @@ import SecSlider from "@components/SecSlider/SecSlider";
 export default function Home() {
   return (
     <>
-      <Header />
+      {/* <Header />
       <SecInformation />
-      <SecParticipants />
+      <SecParticipants /> */}
       <SecReason />
       <SecIndustries />
       <SecSlider />
       <section
-        className="bg-no-repeat bg-cover mt-[-5rem] pt-[5rem]"
+        className="bg-repeat mt-[-6rem] pt-[5rem]"
         style={{ backgroundImage: "url('/images/header/bg-footer.jpeg')" }}
       >
         <SecQuestion />

@@ -8,7 +8,7 @@ type InfoMapProps = {
 };
 const InfoMap = ({ title, icon1, icon2, text1, text2 }: InfoMapProps) => {
   return (
-    <div className="flex flex-col gap-3">
+    <div className="flex flex-col gap-1 sm:gap-3">
       <div className="text-blue-secondary text-[22px] font-bold ">{title}</div>
       <div className="flex flex-row gap-4">
         {icon1 && <img src={icon1} alt="logo" />}

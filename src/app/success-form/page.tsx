@@ -8,7 +8,7 @@ const page = () => {
   const router = useRouter();
   return (
     <div
-      className="bg-no-repeat bg-cover"
+      className="bg-repeat"
       style={{ backgroundImage: "url('/images/header/bg-footer.jpeg')" }}
     >
       <HeaderForm />

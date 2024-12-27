@@ -11,6 +11,7 @@ type Industry = {
   companies: CompanyData[];
 };
 type CompanyData = {
+  video: string;
   logo: string;
   name: string;
   linhvuc: string;
@@ -26,6 +27,7 @@ const industriesData: Industry[] = [
     img: "/images/companies/nhansu.png",
     companies: [
       {
+        video: "/video/hr/hr.mp4",
         logo: "/images/companies/pasona.png",
         name: "Pasona Inc.",
         linhvuc: "Nhân sự",
@@ -43,6 +45,7 @@ const industriesData: Industry[] = [
     img: "/images/companies/cntt.png",
     companies: [
       {
+        video: "/video/it/Hyogo_Fuji Data System.mp4",
         logo: "/images/companies/fuji-data.png",
         name: "Fuji Data System Inc.",
         linhvuc: "Công nghệ thông tin",
@@ -52,6 +55,7 @@ const industriesData: Industry[] = [
           "Vị trí mong muốn tuyển dụng: Phát triển công nghệ, xử lý thông tin",
       },
       {
+        video: "/video/it/Hyogo_Petabit.mp4",
         logo: "/images/companies/petabit.png",
         name: "Petabit Corporation",
         linhvuc: "Công nghệ thông tin",
@@ -68,15 +72,17 @@ const industriesData: Industry[] = [
     img: "/images/companies/xaydung.png",
     companies: [
       {
+        video: "/video/xaydung/SANKYU (subtitle).mp4",
         logo: "/images/companies/sankyu.png",
         name: "Sankyu Inc.",
         linhvuc: "Xây dựng",
         text1:
-          'Sankyu Inc. được thành lập vào năm 1918, hoạt động trong gần 90 năm với tinh thần biết ơn. Khái niệm chính của chúng tôi là coi trọng con người, do đó chúng tôi đã đưa "cảm ơn" vào tên công ty. Sankyu Inc là một công ty chuyên cung cấp dịch vụ Logistics, kỹ thuật nhà máy và lắp ��ặt. Công ty có tham vọng trong mục tiêu trở thành nhà cung cấp dịch vụ hàng đầu thế giới. Kỹ năng kỹ thuật và mạng lưới đáng tin cậy.',
+          'Sankyu Inc. được thành lập vào năm 1918, hoạt động trong gần 90 năm với tinh thần biết ơn. Khái niệm chính của chúng tôi là coi trọng con người, do đó chúng tôi đã đưa "cảm ơn" vào tên công ty. Sankyu Inc là một công ty chuyên cung cấp dịch vụ Logistics, kỹ thuật nhà máy và lắp đặt. Công ty có tham vọng trong mục tiêu trở thành nhà cung cấp dịch vụ hàng đầu thế giới. Kỹ năng kỹ thuật và mạng lưới đáng tin cậy.',
         text2:
           "Vị trí tuyển dụng: Phát triển công nghệ, quản lý, xây dựng: bảo trì máy móc",
       },
       {
+        video: "/video/xaydung/Hyogo_CBS.mp4.mp4",
         logo: "/images/companies/cbs.png",
         name: "CBS Group",
         linhvuc: "Xây dựng và thiết kế cơ khí",
@@ -93,6 +99,7 @@ const industriesData: Industry[] = [
     img: "/images/companies/sanxuat.png",
     companies: [
       {
+        video: "/video/sanxuat/Hyogo_Aspark(1).mp4",
         logo: "/images/companies/aspark.png",
         name: "Aspark Co., Ltd.",
         linhvuc: "Sản xuất",
@@ -102,6 +109,7 @@ const industriesData: Industry[] = [
           "Vị trí mong muốn tuyển dụng: Phát triển công nghệ, quản lý sản xuất, xử lý thông tin",
       },
       {
+        video: "/video/sanxuat/Hyogo2024_Fuji spring.mp4",
         logo: "/images/companies/fuji.png",
         name: "FUJI SPRINGS CO.,INC",
         linhvuc: "Sản xuất các sản phẩm dập kim loại",
@@ -111,6 +119,7 @@ const industriesData: Industry[] = [
           "Vị trí mong muốn tuyển dụng: Phát triển công nghệ, vị trí tổng vụ",
       },
       {
+        video: "/video/sanxuat/Hyogo Machinery.mp4",
         logo: "/images/companies/hyogo.png",
         name: "HYOGO MACHINERY CO.,LTD",
         linhvuc: "Sản xuất thép và máy móc",
@@ -120,6 +129,7 @@ const industriesData: Industry[] = [
           "Vị trí tuyển dụng: Phát triển công nghệ, vị trí công việc chung, quản lý sản xuất",
       },
       {
+        video: "/video/sanxuat/Hyogo2024_Kakos Techno.mp4",
         logo: "/images/companies/kako.png",
         name: "Kako Technos Co., Ltd.",
         linhvuc: "Sản xuất",
@@ -128,6 +138,7 @@ const industriesData: Industry[] = [
         text2: "Vị trí tuyển dụng: Phát triển kỹ thuật",
       },
       {
+        video: "/video/sanxuat/14.ITOH DENKI CO.,LTD20241129(720p) (1).mp4",
         logo: "/images/companies/itoh.png",
         name: "ITOH DENKI CO.,LTD",
         linhvuc: "Sản xuất",
@@ -136,6 +147,7 @@ const industriesData: Industry[] = [
         text2: "",
       },
       {
+        video: "/video/sanxuat/Hyogo2024_Okada Shell.mp4",
         logo: "/images/companies/okada.png",
         name: "Okada Shell Co., Ltd.",
         linhvuc: "Sản xuất khuôn cát chất lượng cao",
@@ -143,14 +155,6 @@ const industriesData: Industry[] = [
           "Okada Shell Co., Ltd. được thành lập vào năm 2006. Công ty chuyên sản xuất và bán 'khuôn cát' chủ yếu dùng để sản xuất các bộ phận cho ô tô, xe máy, tàu thủy, máy móc xây dựng, máy móc công nghiệp, v.v. Với sức mạnh công nghệ mạnh mẽ, doanh nghiệp phát triển sản xuất các loại máy móc và nhiều loại sản phẩm khác trên toàn thế giới.",
         text2:
           "Vị trí mong muốn tuyển dụng: Phát triển công nghệ, Kỹ sư sản xuất, vv.",
-      },
-      {
-        logo: "/images/companies/IBES.png",
-        name: "IBES techno Co.,Ltd",
-        linhvuc: "Sản xuất",
-        text1:
-          "Công ty TNHH IBES Techno được thành lập vào năm 1977. Chủ yếu tham gia vào ngành sản xuất. Công ty cung cấp dịch vụ trọn gói, từ thiết kế và sản xuất đến giao hàng các loại tấm pin cao thế và hạ thế. Hiện tại, có sáu nhân viên người Việt Nam và một nhân viên người Trung Quốc. Đây là công ty mà bạn có thể yên tâm làm việc và phát triển trong thời gian dài.",
-        text2: "Vị trí tuyển dụng: Phát triển công nghệ, quản lý sản xuất",
       },
     ],
   },
@@ -165,8 +169,16 @@ const SecIndustries = () => {
     <div className="flex flex-col justify-center items-center w-full px-4 lg:pl-[15.375rem] lg:pr-[16rem] pt-10 pb-[4.875rem]">
       <SecTitle title="đồng tổ chức" />
       <div className="flex flex-row justify-center items-center mt-[3rem] gap-[22px] lg:gap-10 pb-[6rem] w-full">
-        <img src="/images/header/hyogo-logo.png" alt="logo" className="w-[166px] lg:w-auto"/>
-        <img src="/images/companies/jetro.png" alt="logo" className="w-[166px] lg:w-auto"/>
+        <img
+          src="/images/header/hyogo-logo.png"
+          alt="logo"
+          className="w-[166px] lg:w-auto"
+        />
+        <img
+          src="/images/companies/jetro.png"
+          alt="logo"
+          className="w-[166px] lg:w-auto"
+        />
       </div>
       {/* Slider Section */}
 
@@ -179,7 +191,9 @@ const SecIndustries = () => {
       <h2
         className={`text-${industriesData
           .find((ind) => ind.id === selectedIndustry)
-          ?.color.substring(3)} text-[28px] lg:text-3xl font-bold my-[21px] lg:my-[3.25rem] text-center`}
+          ?.color.substring(
+            3
+          )} text-[28px] lg:text-3xl font-bold my-[21px] lg:my-[3.25rem] text-center`}
       >
         KHỐI NGÀNH{" "}
         {industriesData.find((ind) => ind.id === selectedIndustry)?.title}
@@ -195,6 +209,7 @@ const SecIndustries = () => {
             linhvuc={company.linhvuc}
             text1={company.text1}
             text2={company.text2}
+            video={company.video}
           />
         ))}
       </div>

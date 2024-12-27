@@ -1,5 +1,7 @@
+"use client";
 import React from "react";
 import FooterCol from "./components/FooterCol";
+import { useRouter } from "next/navigation";
 type FooterColProps = {
   title: string;
   text1: string;
@@ -10,6 +12,7 @@ type FooterColProps = {
   text6: string;
 };
 const Footer = () => {
+  const router = useRouter();
   const FooterContent = [
     {
       title: "MENU",
@@ -25,7 +28,7 @@ const Footer = () => {
       text1: "Vincom Center, 45A Lý Tự Trọng, Quận 1, TP. Hồ Chí Minh",
       text2: "(84 28) 3827 0977 | 0901 822 531 (Ms Nhi)",
       text3: "hyogo.recruitment@pasonatech.vn",
-      text4: "DPrivacy Policy",
+      text4: "Privacy Policy",
     },
   ];
   return (
@@ -34,11 +37,36 @@ const Footer = () => {
       <div className=" flex flex-col lg:flex-row gap-12 2xl:gap-0 justify-between items-start">
         <div className="flex flex-col items-start gap-[29px] pt-5">
           <img
-            src="/images/header/hyogo-logo-footer.png"
+            src="/images/header/logohyogo.png"
             alt="logo"
-            className="w-[184px] h-[52px] 2xl:w-auto 2xl:h-auto"
+            className="border border-red-50 max-w-[184px] max-h-[52px] lg:min-w-[341px] lg:min-h-[100px]"
           />
-          <img src="/images/icons/icon-social-media.svg" alt="logo" />
+          <div className="flex flex-row gap-3">
+            <img
+              className="cursor-pointer"
+              src="/images/icons/fb.png"
+              alt="logo"
+              onClick={() =>
+                router.push("https://www.facebook.com/PasonaHRVietnam")
+              }
+            />
+            <img
+              className="cursor-pointer"
+              src="/images/icons/in.png"
+              alt="logo"
+              onClick={() =>
+                router.push(
+                  "https://www.linkedin.com/company/pasonahr-vietnam/"
+                )
+              }
+            />
+            <img
+              className="cursor-pointer"
+              src="/images/icons/web.png"
+              alt="logo"
+              onClick={() => router.push("https://www.google.com/")}
+            />
+          </div>
         </div>
 
         {FooterContent.map((item, index) => (

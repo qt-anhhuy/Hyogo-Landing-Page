@@ -34,24 +34,50 @@ export default function SecInformation() {
 
   return (
     <section className="pb-9">
-      <div className="flex flex-row justify-between items-start">
-        <div className="flex flex-row">
+      <div className="flex flex-col lg:flex-row justify-between items-start">
+        <div className="flex flex-col lg:flex-row">
+          <div className="block lg:hidden w-full flex justify-center">
+            <div className="relative flex items-center justify-center">
+              <img
+                src="/images/SecInformation/info1.png"
+                alt="img"
+                style={{width: '80%'}}
+                className="pt-[15px] mr-3"
+              />
+              <img
+                src="/images/SecInformation/info2.png"
+                alt="img"
+                style={{width: '40%'}}
+                className="absolute bottom-[-10%] left-0"
+              />
+            </div>
+          </div>
           <img
             src="/images/SecInformation/info1.png"
             alt="img"
-            className="pt-[15px] mr-3"
+            style={{width: '50%' , height: "50%"}}
+            className="pt-[15px] mr-3 hidden lg:block"
           />
           <div className="pl-[7px] pt-[65px] flex flex-row gap-[7px] items-start">
             <img
               src="/images/icons/icon-habatan2.svg"
               alt="img"
-              className="pt-8"
+              className="pt-8 hidden lg:block"
             />
             <div>
-              <p className="text-blue-secondary text-[120px] font-medium font-just pl-[7px] ">
-                Hyogo Prefecture
-              </p>
-              <p className="text-black-text text-lg font-medium max-w-[27.6rem] leading-[38px]">
+              <div className="flex flex-row items-center justify-center">
+                <p className="text-blue-secondary text-[64px] lg:text-[120px] font-medium font-just pl-[7px] ">
+                  Hyogo Prefecture
+                </p>
+                <img
+                  src="/images/icons/icon-habatan2.svg"
+                  alt="img"
+                  width={86}
+                  height={89}
+                  className="block lg:hidden"
+                />
+              </div>
+              <p className="text-black-text text-base lg:text-lg font-medium lg:max-w-[27.6rem] leading-loose lg:leading-[38px] pl-[36px] lg:pl-0 pr-[22px] lg:pr-0">
                 Nằm ở vùng Kansai, Nhật Bản, Hyogo nổi tiếng với nền công nghiệp
                 phát triển mạnh mẽ, đặc biệt là các ngành sản xuất, chế tạo và
                 công nghệ thông tin.<br></br> Với nhiều công ty đa quốc gia và
@@ -62,20 +88,32 @@ export default function SecInformation() {
           </div>
         </div>
 
-        <img src="/images/SecInformation/info2.png" alt="img" />
+        <img
+          src="/images/SecInformation/info2.png"
+          alt="img"
+          style={{width: '20%', height: '20%'}}
+          className="hidden lg:block"
+        />
       </div>
 
-      <div className="flex flex-row justify-between items-center pl-[250px] pr-[253px]">
-        <div className="flex flex-col gap-[18px]">
-          <div>
-            <span className="text-blue-secondary text-[80px] font-normal font-just">
+      <div className="flex flex-col lg:flex-row w-[90%] lg:w-[75%] mx-auto items-center justify-center">
+        <img
+          src="/images/SecInformation/Hyogo_Map.png"
+          alt="img"
+          style={{width: '80%', height: "80%"}}
+          className="pb-[39px] block lg:hidden"
+        />
+
+        <div className="flex flex-col gap-[7px] lg:gap-[18px]">
+          <div className="flex flex-col xl:flex-row">
+            <span className="text-blue-secondary text-[54px] lg:text-[80px] font-normal font-just">
               Hyogo Job Fair{" "}
             </span>
-            <span className="text-black-text text-[80px] font-normal font-just">
+            <span className="text-black-text text-[54px] lg:text-[80px] font-normal font-just pl-[81px] lg:pl-0">
               Pre - Event là gì?
             </span>
           </div>
-          <div className="max-w-[789px]">
+          <div className="w-[90%] lg:w-[80%]">
             <p className="text-black-text text-lg font-medium leading-[38px]">
               Ngày hội việc làm tỉnh Hyogo - Nhật Bản là sự kiện đặc biệt do
               Chính quyền tỉnh Hyogo tổ chức. Sự kiện nhằm kết nối sinh viên
@@ -117,21 +155,23 @@ export default function SecInformation() {
         <img
           src="/images/SecInformation/Hyogo_Map.png"
           alt="img"
-          className="pb-[39px]"
+          style={{width: '90%', height: '90%'}}
+          className="pb-[39px] hidden lg:block"
         />
       </div>
 
-      <div className="grid grid-cols-5 gap-[71px] pl-[231px] pr-[245px]">
-        {boxInfos.map((info, index) => (
-          <BoxInfo
-            key={index}
-            icon={info.icon}
-            number={info.number}
-            text={info.text}
-            content={info.content}
-          />
-        ))}
-      </div>
+        <div className=" w-[75%] grid grid-cols-2 lg:grid-cols-5 gap-x-[62px] gap-y-[45px] mx-auto">
+          {boxInfos.map((info, index) => (
+            <BoxInfo
+              key={index}
+              icon={info.icon}
+              number={info.number}
+              text={info.text}
+              content={info.content}
+              className={index === 0 ? "col-span-2 justify-self-center lg:col-span-1" : ""}
+            />
+          ))}
+        </div>
     </section>
   );
 }

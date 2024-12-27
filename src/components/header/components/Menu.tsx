@@ -1,113 +1,209 @@
-"use client";
 import CopyRight from "@components/common/CopyRight";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import React, { useState } from "react";
-import MenuMobile from "./MenuMb";
+import React, { ReactNode, useEffect, useState } from "react";
+import { Button } from "@components/Button";
+import useScroll from "@/hooks/useScroll/useScroll";
+import useWindowSize from "@/hooks/useWindowSize";
+import {
+  IconArrow,
+  IconGroup,
+  IconHome,
+  IconNote,
+  IconPicture,
+  IconQuestion,
+} from "@components/Icon";
 
 type Nav = {
   path: string;
-  title: string;
+  titlePc: string;
+  titleMb: string;
+  icon: ReactNode;
 };
 
-export default function Menu() {
-  const [showMenu, setShowMenu] = useState(false);
+const Menu = () => {
   const router = useRouter();
   const Navigate = () => {
     const pathname = usePathname();
     const navigate: Nav[] = [
       {
-        path: "/",
-        title: "Giới thiệu chương trình",
+        path: "#program-introduction",
+        titlePc: "Giới thiệu<br/> chương trình",
+        titleMb: "Giới thiệu chương trình",
+        icon: <IconHome />,
       },
       {
-        path: "#",
-        title: "Đối tượng tham gia",
+        path: "#target-participants",
+        titlePc: "Đối tượng<br/> tham gia",
+        titleMb: "Đối tượng tham gia",
+        icon: <IconGroup />,
       },
       {
-        path: "#",
-        title: "Lợi ích tham gia",
+        path: "#benefits-of-participation",
+        titlePc: "Lợi ích<br/> tham gia",
+        titleMb: "Lợi ích tham gia",
+        icon: <IconArrow />,
       },
       {
-        path: "#",
-        title: "Danh sách công ty",
+        path: "#list-of-companies",
+        titlePc: "Danh sách<br/> công ty",
+        titleMb: "Danh sách công ty",
+        icon: <IconNote />,
       },
       {
-        path: "#",
-        title: "Cuộc sống tại Hyogo",
+        path: "#life-in-hyogo",
+        titlePc: "Cuộc sống<br/> tại Hyogo",
+        titleMb: "Cuộc sống tại Hyogo",
+        icon: <IconPicture />,
       },
       {
-        path: "#",
-        title: "Các câu hỏi thường gặp",
+        path: "#frequently-asked-questions",
+        titlePc: "Các câu hỏi<br/> thường gặp",
+        titleMb: "Các câu hỏi thường gặp",
+        icon: <IconQuestion />,
       },
     ];
     return { pathname, navigate };
   };
+
+  const isScrolled = useScroll(50);
+  const [isActiveHamburger, setIsActiveHamburger] = useState<boolean>(false);
+  const { width: windowWidth } = useWindowSize();
   const { pathname, navigate } = Navigate();
+
+  useEffect(() => {
+    if (isActiveHamburger) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+  }, [isActiveHamburger]);
+
+  const handleToggleMenu = () => {
+    setIsActiveHamburger(!isActiveHamburger);
+  };
+
+  const isMobileView = windowWidth < 1280;
+  console.log("isActiveHamburger", isActiveHamburger);
+
   return (
     <>
-      <nav className="flex flex-row justify-between items-center pt-[5px] pr-[2px] mt-[3rem] lg:mt-0">
-        <img
-          src="/images/header/logohyogo.png"
-          alt="logo"
-          className="hidden md:block max-w-[228px]"
-        />
-        <img
-          src="/images/header/logo-mb.png"
-          alt="logo"
-          className="block md:hidden"
-        />
-        <div>
-          <img
-            src="/images/icons/menu-mb.png"
-            alt="icon"
-            className="block lg:hidden cursor-pointer"
-            onClick={() => setShowMenu(!showMenu)}
-          />
-        </div>
-        <ul className="mt-6 hidden lg:flex flex-row pb-2 gap-[26px]">
-          {navigate.map((item, index) => (
-            <li
-              key={index}
-              className="flex flex-col justify-center content-center w-[6.5rem] "
-            >
-              <Link
-                className={`flex items-center text-center text-base font-semibold ${
-                  pathname === item.path
-                    ? "text-blue-secondary"
-                    : "text-black-text"
-                }`}
-                href={item.path}
-              >
-                {item.title}
-              </Link>
-              {pathname === item.path && (
-                <div className="w-[65px] h-[3px] bg-[#029fc8] mx-auto mt-1"></div>
-              )}
-            </li>
-          ))}
-        </ul>
-        <div className="hidden lg:block relative">
-          <button
-            className="rounded-[5px] px-[37px] py-[17px] bg-gradient-yellow text-black-btn text-2xl font-extrabold uppercase whitespace-nowrap"
-            onClick={() => router.push("/application-form")}
+      <div
+        className={` ${
+          isScrolled
+            ? "bg-white/80 backdrop-blur-xl shadow-[0px_4px_4px_0px_rgba(34,132,198,0.10)]"
+            : null
+        }`}
+      >
+        <div className="xl:max-w-[1490px] mx-auto bg-white shadow-[0px_4px_4px_0px_rgba(34,132,198,0.10)] xl:bg-transparent xl:shadow-none">
+          <nav
+            className={`w-screen xl:w-full z-50 flex flex-row justify-between items-center py-5 px-4 sm:px-8 md:px-12 lg:px-15 xl:py-6 xl:bg-transparent xl:shadow-none`}
           >
-            Đăng ký ngay
-          </button>
-          <div className="absolute right-[-35%] top-[-23%] flex flex-col">
             <img
-              className="px-[19px]"
-              src="/images/icons/icon-habatan1.svg"
-              alt="icon"
+              src="/images/header/hyogo-logo.png"
+              alt="logo"
+              className="w-1/2 sm:w-1/4 max-w-[180px] lg:max-w-[220px] xl:w-auto"
             />
-            <CopyRight />
+            <div
+              className={`hamburger hamburger--squeeze block xl:hidden ${
+                isActiveHamburger ? "is-active" : ""
+              }`}
+              onClick={handleToggleMenu}
+            >
+              <div className="hamburger-box">
+                <div className="hamburger-inner"></div>
+              </div>
+            </div>
+
+            {!(isActiveHamburger && isMobileView) && (
+              <>
+                <ul className="hidden xl:flex flex-row pb-2 lg:gap-2 2xl:gap-[26px]">
+                  {navigate.map((item, index) => (
+                    <li
+                      key={index}
+                      className="flex flex-col justify-center content-center w-[6.5rem] "
+                    >
+                      <Link
+                        className={`flex items-center text-center text-base hover:text-blue-secondary ${
+                          pathname === item.path || index === 0
+                            ? "text-blue-secondary font-extrabold"
+                            : "text-black-text font-semibold"
+                        }`}
+                        href={item.path}
+                      >
+                        <span
+                          dangerouslySetInnerHTML={{ __html: item.titlePc }}
+                        />
+                      </Link>
+                      {pathname === item.path && (
+                        <div className="w-[65px] h-[3px] bg-[#029fc8] mx-auto mt-1"></div>
+                      )}
+                    </li>
+                  ))}
+                </ul>
+
+                <div className="hidden xl:block relative">
+                  <Button
+                    title="Đăng ký ngay"
+                    iconEnd={
+                      <div className="absolute top-[-32%] right-[-50px] ">
+                        <img
+                          className=""
+                          src="/images/icons/icon-habatan1.svg"
+                          alt="icon"
+                        />
+                        <div className="ml-[-30px]">
+                          <CopyRight />
+                        </div>
+                      </div>
+                    }
+                    onClick={() => router.push("/application-form")}
+                  />
+                </div>
+              </>
+            )}
+          </nav>
+        </div>
+      </div>
+      <nav
+        className={`menu-mobile relative xl:hidden w-0 z-[-1] flex flex-col justify-center items-center gap-5 bg-white-60 backdrop-blur-xl ${
+          isActiveHamburger ? "active w-full" : ""
+        }`}
+      >
+        <div className="xl:hidden bg-slate-500 !w-full h-dvh left-0 z-50 menu-mobile">
+          <div className="flex flex-col items-center px-4 py-8 mt-2 md:px-14">
+            <div className="flex flex-col items-center w-full space-y-6">
+              {navigate.map((item, index) => (
+                <button
+                  key={index}
+                  className={`item-link w-full flex items-center gap-4 py-2 px-7  hover:bg-blue-secondary hover:text-white ${
+                    pathname === item.path || index === 0
+                      ? "bg-blue-secondary text-white"
+                      : "bg-blue-light text-blue-secondary"
+                  } text-xl font-medium rounded-[5px] border-2 border-blue-secondary`}
+                  style={{
+                    color:
+                      pathname === item.path || index === 0
+                        ? "white"
+                        : "text-blue-secondary",
+                  }}
+                >
+                  {item.icon}
+                  {item.titleMb}
+                </button>
+              ))}
+            </div>
+
+            {/* Biểu tượng mạng xã hội */}
+            <img
+              src="/images/icons/icon-social-media.svg"
+              alt="logo"
+              className="mt-9"
+            />
           </div>
         </div>
       </nav>
-      <div className="block lg:hidden w-full h-1 mt-1 bg-white shadow-[0px_4px_4px_0px_rgba(34,132,198,0.10)]" />
-      <div className="relative w-full mt-[3.25rem]">
-        {showMenu && <MenuMobile />}
-      </div>
     </>
   );
-}
+};
+export default Menu;

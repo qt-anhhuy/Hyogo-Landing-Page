@@ -17,12 +17,7 @@ export const Marquee = ({
   children,
 }: MarqueeProps) => {
   return (
-    <div
-      className={cn(
-        "flex w-full overflow-hidden [--duration:60s] [--gap:1rem]",
-        className
-      )}
-    >
+    <div className={cn("flex w-full overflow-hidden [--gap:1rem]", className)}>
       <div
         className={cn(
           "flex min-w-full shrink-0 items-center justify-around gap-[--gap] animate-marquee",

@@ -22,7 +22,7 @@ const config: Config = {
         sm: "640px",
         md: "768px",
         lg: "1024px",
-        xl: "1280px",
+        xl: "1417px",
         "2xl": "1417px ",
       },
     },
@@ -39,6 +39,7 @@ const config: Config = {
       borderColor: {
         gray: "#e2e4e5",
         "blue-secondary": "#029FC8",
+        "blue-quaternary": "#B4E3EF",
       },
       backgroundColor: {
         "blue-quaternary": "#b4e3ef",
